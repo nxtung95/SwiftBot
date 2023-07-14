@@ -68,12 +68,12 @@ public class Swiftbot {
 			// If there is a object between the distance from start to end.
 			if (step.getDirection() == 1) {
 				if ((x >= start.getX() && x <= end.getX()) && (y >= start.getY() && y <= end.getY())) {
-					System.out.println("Detect a object with (x,y) coordinate is (" + x + "," + y + ")");
+					System.out.println("Detect a object in front of with (x,y) coordinate is (" + x + "," + y + ")");
 					return true;
 				}
 			} else {
 				if ((x <= start.getX() && x >= end.getX()) && (y <= start.getY() && y >= end.getY())) {
-					System.out.println("Detect a object with (x,y) coordinate is (" + x + "," + y + ")");
+					System.out.println("Detect a object in front of with (x,y) coordinate is (" + x + "," + y + ")");
 					return true;
 				}
 			}
