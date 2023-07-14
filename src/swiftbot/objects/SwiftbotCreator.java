@@ -82,8 +82,11 @@ public class SwiftbotCreator {
 
 	public List<AroundObject> createAroundObjects() {
 		List<AroundObject> aroundObjects = new ArrayList<>();
+		System.out.println("===== Initialize the coordinate of some objects for Swiftbot detect");
 		AroundObject obj1 = new AroundObject(new Coordinate(3.4, 3.4));
 		AroundObject obj2 = new AroundObject(new Coordinate(-3.4, -3.4));
+		System.out.println("===== Object A: (x,y) = (" + obj1.getCoordinate().getX() + "," + obj1.getCoordinate().getY() + ")");
+		System.out.println("===== Object B: (x,y) = (" + obj2.getCoordinate().getX() + "," + obj2.getCoordinate().getY() + ")");
 
 		aroundObjects.add(obj1);
 		aroundObjects.add(obj2);
