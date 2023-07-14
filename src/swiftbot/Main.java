@@ -1,9 +1,6 @@
 package swiftbot;
 
-import swiftbot.objects.Creator;
-import swiftbot.objects.NumberConvertor;
-import swiftbot.objects.Step;
-import swiftbot.objects.Swiftbot;
+import swiftbot.objects.*;
 
 import java.util.InputMismatchException;
 import java.util.List;
@@ -37,13 +34,21 @@ public class Main {
 
                 System.out.println("Decimal: " + decimalNumber + ", Binary: " + binary + ", Hexadecimal: " + hex + ", Octal: " + octal);
 
-                Creator creator = new Creator("Creator Name");
-                int time = creator.createTimeEachStep(hex);
-                int speed = creator.createSpeedWheels(octal);
-                List<Step> stepList = creator.createSteps(time, binary);
+                SwiftbotCreator swiftbotCreator = new SwiftbotCreator("Creator Name");
+                int time = swiftbotCreator.createTimeEachStep(hex);
+                int speed = swiftbotCreator.createSpeedWheels(octal);
+                List<Step> stepList = swiftbotCreator.createSteps(time, speed, binary);
+
+                // Create random the coordinate of Around object position for Swiftbot detect
+                List<AroundObject> aroundObjects = swiftbotCreator.createAroundObjects();
 
                 Swiftbot swiftbot = new Swiftbot(stepList, speed);
-                swiftbot.move();
+                try {
+                    swiftbot.move(aroundObjects);
+                } catch (Exception detechObjectException) {
+                    System.err.println("WARNING! " + detechObjectException.getMessage());
+                    return;
+                }
 
                 System.out.println("Do you want to continue? (Y/N)");
                 keyboard.nextLine();
