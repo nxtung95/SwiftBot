@@ -1,0 +1,4 @@
+// Format: object name:coordinate(x,y)
+ObjectA:2,2
+ObjectB:1,1
+ObjectC:-1.4,-1.4

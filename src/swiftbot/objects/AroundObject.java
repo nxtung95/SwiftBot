@@ -1,9 +1,11 @@
 package swiftbot.objects;
 
 public class AroundObject {
+    private String name;
     private Coordinate coordinate;
 
-    public AroundObject(Coordinate coordinate) {
+    public AroundObject(String name, Coordinate coordinate) {
+        this.name = name;
         this.coordinate = coordinate;
     }
 
@@ -11,7 +13,7 @@ public class AroundObject {
         return coordinate;
     }
 
-    public void setCoordinate(Coordinate coordinate) {
-        this.coordinate = coordinate;
+    public String getName() {
+        return name;
     }
 }

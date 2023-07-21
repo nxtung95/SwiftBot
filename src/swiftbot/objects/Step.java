@@ -1,25 +1,23 @@
 package swiftbot.objects;
 
+import java.util.List;
+
 public class Step {
 	private int time;
 	private int direction; //0: Move backwards, 1: Move forward
-	private String color;
 	private Coordinate start; // coordinate (x,y) for starting
 	private Coordinate end; // coordinate (x,y) for ending
+
+	private List<SubStep> subSteps;
 
 	public Step() {
 	}
 
-	public Step(int time, int direction, String color, Coordinate start, Coordinate end) {
+	public Step(int time, int direction, Coordinate start, Coordinate end) {
 		this.time = time;
 		this.direction = direction;
-		this.color = color;
 		this.start = start;
 		this.end = end;
-	}
-
-	public String getColor() {
-		return color;
 	}
 
 	public int getTime() {
@@ -44,5 +42,21 @@ public class Step {
 
 	public void setEnd(Coordinate end) {
 		this.end = end;
+	}
+
+	public void setTime(int time) {
+		this.time = time;
+	}
+
+	public void setDirection(int direction) {
+		this.direction = direction;
+	}
+
+	public List<SubStep> getSubSteps() {
+		return subSteps;
+	}
+
+	public void setSubSteps(List<SubStep> subSteps) {
+		this.subSteps = subSteps;
 	}
 }
