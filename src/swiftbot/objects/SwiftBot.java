@@ -66,7 +66,7 @@ public class SwiftBot {
 					System.out.println("Start moving backwards for " + step.getTime() + " seconds" +
 							", Start coordinate (x,y) = (" + start.getX() + "," + start.getY() + ")" +
 							", End coordinate (x,y) = (" + end.getX() + "," + end.getY() + ")" +
-							", Speed:" + speed + ", " +
+							", Speed:" + speed +
 							", Start time: " + LocalDateTime.now().format(formatter));
 					if (step.getTime() != 1) {
 						List<SubStep> subSteps = step.getSubSteps();

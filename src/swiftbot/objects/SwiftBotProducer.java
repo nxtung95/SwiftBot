@@ -38,8 +38,6 @@ public class SwiftBotProducer {
 		Coordinate end = new Coordinate();
 		double distance = ((double) speed / 100 * time);
 
-		// Assume that Swiftbot every 1s swiftbot will move a distance 1(m) with max velocity (100%).
-		// Example, speed = 94%, time = 2s. Every 1s, swiftbot will move 0.94 (m), total is 1.88 (m).
 		double[] endCoordinate = createEndCoordinate(digitBinary, start, distance);
 		end.setX(endCoordinate[0]);
 		end.setY(endCoordinate[1]);
